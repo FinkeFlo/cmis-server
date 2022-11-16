@@ -4,7 +4,7 @@ ARG BASE_DIR=/opt/cmis-server
 #####
 # Preparation stage 
 #####
-FROM exoplatform/jdk:8-ubuntu-1804 AS install
+FROM alpine AS install
 
 ARG BASE_DIR
 # Tomcat Version
@@ -48,7 +48,7 @@ COPY bin/setenv.sh ${BASE_DIR}/bin
 #####
 # Final stage 
 #####
-FROM exoplatform/jdk:8-ubuntu-1804
+FROM alpine
 
 LABEL maintainer="eXo Platform <docker@exoplatform.com>"
 
