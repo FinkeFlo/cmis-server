@@ -90,5 +90,5 @@ VOLUME /data
 
 USER tomcat
 
-ENTRYPOINT ["/usr/local/bin/tini", "--"]
+ENTRYPOINT ["/sbin/tini", "--"]
 CMD [ "/opt/cmis-server/bin/catalina.sh", "run" ]
