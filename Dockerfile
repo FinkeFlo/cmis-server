@@ -16,7 +16,7 @@ ENV OPENCMIS_VERSION 1.1.0
 # fileshare or inmemory
 ARG CMIS_SERVER_TYPE=fileshare  
 
-RUN apk update && apk install curl
+RUN apk update && apk add curl
 RUN set -x \
   && mkdir -p /opt \
   && curl -LO https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_VERSION_MAJOR}/v${TOMCAT_VERSION_FULL}/bin/apache-tomcat-${TOMCAT_VERSION_FULL}.tar.gz \
