@@ -62,7 +62,10 @@ EXPOSE 8080
 
 ENV CMIS_USERS_PASSWORD=cm1sp@ssword
 
-#RUN apk -qq update \
+RUN apk -qq update \
+   && apk add --upgrade apk-tools
+   && apk upgrade --available
+   && apk add xmlstarlet
 #  && apt-get -qq -y upgrade ${_APT_OPTIONS} \
 #  && apt-get -qq -y install ${_APT_OPTIONS} xmlstarlet \
 #  && apt-get -qq -y autoremove \
