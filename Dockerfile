@@ -42,7 +42,7 @@ RUN set -x \
     && curl -LO https://www.apache.org/dyn/closer.lua/chemistry/opencmis/1.1.0/chemistry-opencmis-server-bindings-war-1.1.0.war \
     && mkdir ${BASE_DIR}/webapps/cmis \
     && cd ${BASE_DIR}/webapps/cmis \
-    && unzip  -qq /tmp/chemistry-opencmis-server-bindings-war-1.1.0.war  -d .
+    && unzip  /tmp/chemistry-opencmis-server-bindings-war-1.1.0.war  -d .
 
 COPY bin/setenv.sh ${BASE_DIR}/bin
 
