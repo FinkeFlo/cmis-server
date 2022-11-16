@@ -66,7 +66,9 @@ RUN apk -qq update \
    && apk add --upgrade apk-tools \
    && apk upgrade --available \
    && apk add xmlstarlet \
-   && apk add shadow
+   && apk add shadow \
+   && apk add tini
+
 #  && apt-get -qq -y upgrade ${_APT_OPTIONS} \
 #  && apt-get -qq -y install ${_APT_OPTIONS} xmlstarlet \
 #  && apt-get -qq -y autoremove \
