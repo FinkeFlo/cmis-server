@@ -75,14 +75,14 @@ RUN apk -qq update \
 
 # Prepare users and install directory
 RUN set -x \
-  && groupadd --gid 999 tomcat && useradd --gid tomcat -u 999 -s /bin/bash tomcat \
+  && groupadd --gid 1000 tomcat && useradd --gid tomcat -u 1000 -s /bin/bash tomcat \
   && mkdir -p /opt /data/cmis \
   && chown -R tomcat:tomcat /data
 
 COPY repository-template.properties /
 
 # Copy the tomcat server already configured
-COPY --chown=999 --from=install ${BASE_DIR} ${BASE_DIR}
+COPY --chown=1000 --from=install ${BASE_DIR} ${BASE_DIR}
 
 VOLUME /data
 
