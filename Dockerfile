@@ -39,10 +39,10 @@ RUN set -x \
 RUN set -x \
     && cd /tmp \
     #&& curl -LO http://central.maven.org/maven2/org/apache/chemistry/opencmis/chemistry-opencmis-server-${CMIS_SERVER_TYPE}/1.1.0/chemistry-opencmis-server-${CMIS_SERVER_TYPE}-${OPENCMIS_VERSION}.war \
-    && curl -LO https://archive.apache.org/dist/chemistry/opencmis/1.1.0/chemistry-opencmis-bridge-1.1.0.war \
+    && curl -LO https://www.apache.org/dyn/closer.lua/chemistry/opencmis/1.1.0/chemistry-opencmis-server-bindings-war-1.1.0.war \
     && mkdir ${BASE_DIR}/webapps/cmis \
     && cd ${BASE_DIR}/webapps/cmis \
-    && unzip  /tmp/chemistry-opencmis-server-${CMIS_SERVER_TYPE}-${OPENCMIS_VERSION}.war -d .
+    && unzip  -qq /tmp/chemistry-opencmis-server-bindings-war-1.1.0.war  -d .
 
 COPY bin/setenv.sh ${BASE_DIR}/bin
 
