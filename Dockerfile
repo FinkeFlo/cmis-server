@@ -38,7 +38,8 @@ RUN set -x \
 
 RUN set -x \
     && cd /tmp \
-    && curl -LO http://central.maven.org/maven2/org/apache/chemistry/opencmis/chemistry-opencmis-server-${CMIS_SERVER_TYPE}/1.1.0/chemistry-opencmis-server-${CMIS_SERVER_TYPE}-${OPENCMIS_VERSION}.war \
+    #&& curl -LO http://central.maven.org/maven2/org/apache/chemistry/opencmis/chemistry-opencmis-server-${CMIS_SERVER_TYPE}/1.1.0/chemistry-opencmis-server-${CMIS_SERVER_TYPE}-${OPENCMIS_VERSION}.war \
+    && curl -LO https://archive.apache.org/dist/chemistry/opencmis/1.1.0/chemistry-opencmis-bridge-1.1.0.war \
     && mkdir ${BASE_DIR}/webapps/cmis \
     && cd ${BASE_DIR}/webapps/cmis \
     && unzip -qq /tmp/chemistry-opencmis-server-${CMIS_SERVER_TYPE}-${OPENCMIS_VERSION}.war -d .
@@ -61,7 +62,7 @@ EXPOSE 8080
 
 ENV CMIS_USERS_PASSWORD=cm1sp@ssword
 
-RUN apt-get -qq update \
+RUN apk -qq update \
   && apt-get -qq -y upgrade ${_APT_OPTIONS} \
   && apt-get -qq -y install ${_APT_OPTIONS} xmlstarlet \
   && apt-get -qq -y autoremove \
