@@ -42,7 +42,7 @@ RUN set -x \
     && curl -LO https://archive.apache.org/dist/chemistry/opencmis/1.1.0/chemistry-opencmis-bridge-1.1.0.war \
     && mkdir ${BASE_DIR}/webapps/cmis \
     && cd ${BASE_DIR}/webapps/cmis \
-    && unzip -qq /tmp/chemistry-opencmis-server-${CMIS_SERVER_TYPE}-${OPENCMIS_VERSION}.war -d .
+    && unzip  /tmp/chemistry-opencmis-server-${CMIS_SERVER_TYPE}-${OPENCMIS_VERSION}.war -d .
 
 COPY bin/setenv.sh ${BASE_DIR}/bin
 
