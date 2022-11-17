@@ -69,6 +69,7 @@ RUN apk -qq update \
    && apk add xmlstarlet \
    && apk add shadow \
    && apk add tini \
+   && apk add nano \
   && apk add openjdk11
 
 #  && apt-get -qq -y upgrade ${_APT_OPTIONS} \
