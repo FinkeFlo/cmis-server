@@ -80,7 +80,7 @@ RUN apk -qq update \
 
 # Prepare users and install directory
 RUN set -x \
-  && groupadd --gid 1000 tomcat && useradd --gid tomcat -u 1000 -s /bin/bash tomcat \
+  && groupadd --gid 1000 tomcat && useradd --gid tomcat -u 1000 -s /bin/sh tomcat \
   && mkdir -p /opt /data/cmis \
   && chown -R tomcat:tomcat /data
 
