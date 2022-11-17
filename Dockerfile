@@ -70,7 +70,7 @@ RUN apk -qq update \
    && apk add shadow \
    && apk add tini \
    && apk add nano \
-  && apk add openjdk11
+  && apk add openjdk8
 
 #  && apt-get -qq -y upgrade ${_APT_OPTIONS} \
 #  && apt-get -qq -y install ${_APT_OPTIONS} xmlstarlet \
