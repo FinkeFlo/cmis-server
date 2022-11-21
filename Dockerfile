@@ -78,6 +78,10 @@ RUN apk -qq update \
 #  && apt-get -qq -y clean \
 #  && rm -rf /var/lib/apt/lists/*
 
+RUN set -x \
+    cd ${BASE_DIR}/webapps \
+    && curl -LO https://archive.apache.org/dist/chemistry/opencmis/1.1.0/chemistry-opencmis-server-bindings-war-1.1.0.war 
+
 # Prepare users and install directory
 RUN set -x \
   && groupadd --gid 1000 tomcat && useradd --gid tomcat -u 1000 -s /bin/sh tomcat \
