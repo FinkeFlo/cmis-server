@@ -69,7 +69,7 @@ RUN apk -qq update \
    && apk add xmlstarlet \
    && apk add shadow \
    && apk add tini \
-   && apk add nano sudo maven \
+   && apk add nano sudo maven curl \
    && apk add openjdk8
 
 #  && apt-get -qq -y upgrade ${_APT_OPTIONS} \
